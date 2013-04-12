@@ -38,16 +38,16 @@ Sets the default return value to the string 'test'
 **Q: Ruby programmers tend to favor the shovel operator (<<) over the # plus equals operator (+=) when building up strings.  Why?**  
 A: << modifies the string in place, whereas += creates a new one. Further explanation here http://library.edgecase.com/a-little-more-about-strings
 
-`1.9.3-p194 :001 > a = "foo"  
- => "foo"  
-1.9.3-p194 :002 > a.object_id  
- => 70283949004920  
-1.9.3-p194 :003 > a << " bar"  
- => "foo bar"  
-1.9.3-p194 :004 > a.object_id  
- => 70283949004920  
-1.9.3-p194 :005 > a += " baz"  
- => "foo bar baz"  
-1.9.3-p194 :006 > a.object_id  
- => 70283948969420`  
+`1.9.3-p194 :001 > a = "foo"`  
+` => "foo"`  
+`1.9.3-p194 :002 > a.object_id`  
+` => 70283949004920`  
+`1.9.3-p194 :003 > a << " bar"`  
+` => "foo bar"`  
+`1.9.3-p194 :004 > a.object_id`  
+` => 70283949004920`  
+`1.9.3-p194 :005 > a += " baz"`  
+` => "foo bar baz"`  
+`1.9.3-p194 :006 > a.object_id`  
+` => 70283948969420`  
 
