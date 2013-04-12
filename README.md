@@ -35,7 +35,7 @@ Sets the default return value to the string 'test'
 
 ### about_strings
 
-*Q: Ruby programmers tend to favor the shovel operator (<<) over the # plus equals operator (+=) when building up strings.  Why?*
+**Q: Ruby programmers tend to favor the shovel operator (<<) over the # plus equals operator (+=) when building up strings.  Why?**
 A: << modifies the string in place, whereas += creates a new one. Further explanation here http://library.edgecase.com/a-little-more-about-strings
 
 `1.9.3-p194 :001 > a = "foo"
