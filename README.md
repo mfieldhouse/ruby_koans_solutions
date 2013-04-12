@@ -51,3 +51,8 @@ A: << modifies the string in place, whereas += creates a new one. Further explan
 `1.9.3-p194 :006 > a.object_id`  
 ` => 70283948969420`  
 
+Strings can be split using regular expressions
+
+`a = "the:rain:in:spain"`  
+`a.split(/:/)`  
+`#=>  ["the", "rain", "in", "spain"]`
