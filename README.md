@@ -65,6 +65,8 @@ Symbols stay in memory until the program exits.
 
 ### about_regular_expressions
 
+A failed match returns nil.
+
 Regular expression operators are greedy. As many occurences as possible are matched while still allowing the 
 overall match to succeed. A greedy metacharacter can be made lazy by following it with a ?
 
@@ -72,11 +74,12 @@ The left most match wins
 `"abbcc az[/az*/]"`  
 `=> "a"`
 
-#select invokes the block for each element and returns an array of the original elements for which the block
-returns true
+`#select` invokes the block for each element and returns an array of the original elements for which the block returns true
 
 `["cat", "bat", "rat", "zat"].select { |a| a[/[cbr]at/] }`  
 `=> ["cat", "bat", "rat"]`
 
-`\w\` - Any word character. a-z, A-Z, 0-9 or underscore. No spaces allowed.
+`\w` - Any word character. a-z, A-Z, 0-9 or underscore. No spaces allowed.  
 `.` - period is any non newline character.
+
+Capital negates. `\W` - not a word character. `\D` - not a digit.
