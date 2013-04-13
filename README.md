@@ -11,8 +11,8 @@ Ruby Koans available from http://rubykoans.com/ and their solutions.
 When an lvalue is preceded by an asterisk, all remaining rvalues are placed in an array and assigned to that lvalue
 
 `a, *b = 1, 2, 3`  
-`a #=> 1`   
-`b #=> [2, 3]`
+`a => 1`   
+`b => [2, 3]`
 
 When there are too few rvalues to assign to lvalues, the variable is assigned nil
 
@@ -30,8 +30,8 @@ A: #fetch raises an exception KeyError if the key does not exist. #[] returns ni
 Sets the default return value to the string 'test'
 
 `hash[:one] = "dog"`  
-`hash[:one] #=> "dog"`  
-`hash[:two] #=> "test"`
+`hash[:one] => "dog"`  
+`hash[:two] => "test"`
 
 ### about_strings
 
@@ -55,4 +55,28 @@ A: << modifies the string in place, whereas += creates a new one. Further explan
 
 `a = "the:rain:in:spain"`  
 `a.split(/:/)`  
-`#=>  ["the", "rain", "in", "spain"]`
+`=>  ["the", "rain", "in", "spain"]`
+
+### about_symbols
+
+to_s is called on interpolated symbols.
+
+Symbols stay in memory until the program exits.
+
+### about_regular_expressions
+
+Regular expression operators are greedy. As many occurences as possible are matched while still allowing the 
+overall match to succeed. A greedy metacharacter can be made lazy by following it with a ?
+
+The left most match wins  
+`"abbcc az[/az*/]"`  
+`=> "a"`
+
+#select invokes the block for each element and returns an array of the original elements for which the block
+returns true
+
+`["cat", "bat", "rat", "zat"].select { |a| a[/[cbr]at/] }`  
+`=> ["cat", "bat", "rat"]`
+
+`\w\` - Any word character. a-z, A-Z, 0-9 or underscore. No spaces allowed.
+`.` - period is any non newline character.
