@@ -83,3 +83,20 @@ The left most match wins
 `.` - period is any non newline character.
 
 Capital negates. `\W` - not a word character. `\D` - not a digit.
+
+A regular expression can be assigned to a variable.
+
+`grays = /(James|Dana|Summer) Gray/`  
+`"James Gray"[grays]`
+`=> "James Gray"`
+
+**scan = find all**  
+**sub = find and replace**  
+**gsub = find and replace all**  
+
+### about_methods
+
+`eval` takes a string and executes it as code  
+`eval("Time.now")`
+
+The context which code is executed in is called a binding.
