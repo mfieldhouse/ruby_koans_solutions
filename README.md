@@ -86,8 +86,8 @@ Capital negates. `\W` - not a word character. `\D` - not a digit.
 
 A regular expression can be assigned to a variable.
 
-`grays = /(James|Dana|Summer) Gray/`  
-`"James Gray"[grays]`
+```grays = /(James|Dana|Summer) Gray/  
+"James Gray"[grays]```  
 `=> "James Gray"`
 
 **scan = find all**  
@@ -105,12 +105,14 @@ The last thing to be evaluated in a method is returned.
 
 When return is used in a method, only the object it specifies is returned, even if it is not the last.
 
-`def method_with_explicit_return  
-  :a_non_return_value  
-  return :return_value  
-  :another_non_return_value  
-end`  
-`=> :return_value`
+```ruby
+def method_with_explicit_return 
+  :a_non_return_value
+  return :return_value
+  :another_non_return_value
+end
+```  
+`method_with_explicit_return => :return_value`
 
 A variable args method returns an array and is of class Array.
 
@@ -125,4 +127,25 @@ This includes using self from within other methods of the class and when trying 
 ### about_constants
 
 Top level constants are referenced by double colons
+
+```ruby
+CONSTANT = "woof" 
+  class Dog
+
+    CONSTANT = "bark" 
+
+    def self.sound
+      puts C
+      puts ::C
+    end
+  end
+```
+```ruby
+Dog.sound =>
+"bark"
+"woof"
+```
+
+
+
 
