@@ -100,3 +100,29 @@ A regular expression can be assigned to a variable.
 `eval("Time.now")`
 
 The context which code is executed in is called a binding.
+
+The last thing to be evaluated in a method is returned.
+
+When return is used in a method, only the object it specifies is returned, even if it is not the last.
+
+`def method_with_explicit_return  
+  :a_non_return_value  
+  return :return_value  
+  :another_non_return_value  
+end`  
+`=> :return_value`
+
+A variable args method returns an array and is of class Array.
+
+Inside a class def creates a new instance method.  
+When self is used inside a class, a new class method is created.
+
+**Private and Protected Methods**
+
+Calling private methods with an explicit receiver raises NoMethodError.  
+This includes using self from within other methods of the class and when trying to use the method on an instance of the class
+
+### about_constants
+
+Top level constants are referenced by double colons
+
