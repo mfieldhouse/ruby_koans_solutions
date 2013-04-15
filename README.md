@@ -112,7 +112,9 @@ def method_with_explicit_return
   :another_non_return_value
 end
 ```  
-`method_with_explicit_return => :return_value`
+```ruby
+method_with_explicit_return => :return_value
+```
 
 A variable args method returns an array and is of class Array.
 
@@ -146,6 +148,9 @@ Dog.sound =>
 "woof"
 ```
 
+Nested classes inherit constants from enclosing classes. Subclasses inherit constants from parent classes.  
+Lexical scope = static scoping
 
+TODO: Read about nested and lexical hierarchy scope
 
 
