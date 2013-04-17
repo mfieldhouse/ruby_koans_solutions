@@ -194,3 +194,39 @@ def triangle(a, b, c)
   else        :scalene
 end
 ```
+173
+
+### about_exceptions
+
+In Ryan Davis' Ruby Quickref, he says   
+> 'don’t rescue Exception. EVER. or I will stab you.' http://www.zenspider.com/Languages/Ruby/QuickRef.html#general-tips
+
+This post at Stackoverflow explains why http://stackoverflow.com/questions/10048173/why-is-it-bad-style-to-rescue-exception-e-in-ruby
+
+This is because Exception is the root of ruby's exception hierarchy. When you rescue from Exception, you rescue from everything, including subclasses such as SyntaxError, LoadError and Interrupt.
+
+Some examples of why this would be bad are:
+
+* Rescuing Interrupt prevents the user from using Ctrl-C to exit the program.  
+* Rescuing SyntaxError means that `eval`s that fail wil do so silently  
+* Rescuing SignalException will prevent the program from responding to signals. It will be unkillable except by `kill -9`
+
+You should handle only exceptions that you know how to recover from.
+
+`raise` and `fail` are synonyms.
+
+The format of writing code which may raise an exception:
+
+```ruby
+begin
+  # something which might raise an exception
+rescue SomeExceptionClass => some_variable
+  # code that deals with some exception
+rescue SomeOtherException => some_other_variable
+  # code that deals with some other exception
+else
+  # code that runs only if *no* exception was raised
+ensure
+  # ensure that this code always runs, no matter what
+end
+```

@@ -14,12 +14,10 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  if a == b && a == c
-    :equilateral
-  elsif (a == b) || (a == c) || (b == c)
-    :isosceles
-  else
-    :scalene 
+  case [a, b, c].uniq.size
+    when 1 then :equilateral
+    when 2 then :isosceles
+    else        :scalene 
   end
 end
 
