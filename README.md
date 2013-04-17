@@ -153,4 +153,44 @@ Lexical scope = static scoping
 
 TODO: Read about nested and lexical hierarchy scope
 
+### about_control_statements
 
+All statements in ruby return the value of the last expression evaluated.
+
+**Ternary Operator**
+
+If true, return :true_value else return :false_value  
+```ruby
+true ? :true_value : :false_value
+```
+
+```ruby
+unless true   # the same as saying if !true
+```
+
+`p foo` does `puts foo.inspect`, printing the value of inspect instead of to_s, making it more suitable for debugging.
+
+### about_true_and_false
+
+nil is treated as false
+
+Everything else is treated as true: 0, 1, [], {}, "Strings" and "".
+
+### about_triangle_project
+
+In ruby, it is invalid to do `a == b == c`. The closest equivalent is `a == b && a == c`
+
+The most elegant solution:  
+* Put the sides of the triangle in an array
+* Use uniq to remove all sides from the array which are not unique in size
+* Use size to find out how many sides are left in the array
+* If all sides match, 1 will be returned. If 2 sides match, 2 is returned.
+
+```ruby
+def triangle(a, b, c)
+  case [a, b, c].uniq.size
+  when 1 then :equilateral
+  when 2 then :isosceles
+  else        :scalene
+end
+```
