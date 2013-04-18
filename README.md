@@ -230,3 +230,29 @@ ensure
   # ensure that this code always runs, no matter what
 end
 ```
+
+### about_triangle_project_2
+
+To pass this test, an error must be raised when:
+
+* The triangle has zero or negative length sides
+* The sum of the two shortest sides is not greater than the longest side
+
+```ruby
+def triangle(a, b, c)
+  # sort the sides by shortest length to largest
+  a, b, c = [a, b, c].sort   
+
+  # Raise an error if the length of the shortest side is zero or less
+  raise TriangleError, "A triangle's side cannot be 0 or have a negative length" if [a, b, c].min <= 0 
+
+  # Raise an error unless the sum of the two shortest sides is greater than the longest
+  
+  raise TriangleError, "The sum of two smallest sides must be greater than the largest side" unless a + b > c
+  case [a, b, c].uniq.size
+    when 1 then :equilateral
+    when 2 then :isosceles
+    else        :scalene 
+  end
+end
+```

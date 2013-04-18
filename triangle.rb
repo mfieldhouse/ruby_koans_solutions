@@ -14,6 +14,9 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
+  a, b, c = [a, b, c].sort
+  raise TriangleError, "A triangle's side cannot be 0 or have a negative length" if [a, b, c].min <= 0
+  raise TriangleError, "The sum of two smallest sides must be greater than the largest side" unless a + b > c
   case [a, b, c].uniq.size
     when 1 then :equilateral
     when 2 then :isosceles
