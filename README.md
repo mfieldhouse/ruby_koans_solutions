@@ -53,9 +53,13 @@ A: << modifies the string in place, whereas += creates a new one. Further explan
 
 **Strings can be split using regular expressions**
 
-`a = "the:rain:in:spain"`  
-`a.split(/:/)`  
-`=>  ["the", "rain", "in", "spain"]`
+```ruby
+a = "the:rain:in:spain"
+`a.split(/:/)
+```  
+```ruby
+=>  ["the", "rain", "in", "spain"]
+```
 
 ### about_symbols
 
@@ -194,7 +198,6 @@ def triangle(a, b, c)
   else        :scalene
 end
 ```
-173
 
 ### about_exceptions
 
@@ -247,7 +250,7 @@ def triangle(a, b, c)
   raise TriangleError, "A triangle's side cannot be 0 or have a negative length" if [a, b, c].min <= 0 
 
   # Raise an error unless the sum of the two shortest sides is greater than the longest
-  
+
   raise TriangleError, "The sum of two smallest sides must be greater than the largest side" unless a + b > c
   case [a, b, c].uniq.size
     when 1 then :equilateral
@@ -255,4 +258,25 @@ def triangle(a, b, c)
     else        :scalene 
   end
 end
+
+class TriangleError < StandardError
+  # nothing needed here, just need to create a new error class which inherits from StandardError
+end
 ```
+
+### about_iteration
+
+`collect` is a synonym for `map`  
+`find_all` is a synonym for `collect`  
+`find` locates the first element matching a criteria
+
+`inject` exectues the block given to it for each item in the object it is acting on. It takes two variables, sum and item. It transforms the sum in a cumulative way each time. The sum by default starts at 0, but can be changed.
+
+```ruby
+[1, 2, 3].inject(0) { |sum, item| sum + item }  # returns (((0 + 1) + 2) + 3)  = 6
+[1, 2, 3].inject(10) { |sum, item| sum + item } # returns (((10 + 1) + 2) + 3) = 16
+```
+
+### about_blocks
+
+Methods can take blocks as an argument. Any number of things can happen within the method. The block is called by `yield`.
