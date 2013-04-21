@@ -280,3 +280,27 @@ end
 ### about_blocks
 
 Methods can take blocks as an argument. Any number of things can happen within the method. The block is called by `yield`.
+
+### about_classes
+
+attr_reader will automatically define an instance variable reader
+
+```ruby
+class Dog
+  attr_reader :name
+
+  def name=(name)
+    @name = name
+  end
+end
+```
+
+attr_accessor will automatically define read and write accessors
+
+### about_dice_project
+
+Roll 5 six-sided dice and return an array of the results  
+```ruby
+5.times.map { 1 + rand(6) }
+=> [2, 5, 1, 2, 4]
+```
