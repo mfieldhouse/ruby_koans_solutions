@@ -307,4 +307,14 @@ Roll 5 six-sided dice and return an array of the results
 
 ### about_inheritance
 
-Subclasses can invoke parent behaviour via `super`
+Subclasses can invoke parent behaviour via `super`. Super does not work across methods with different names.
+
+### about_modules
+
+Extend within a class brings in the module's methods as class methods
+Include within a class brings in the module's methods as instance methods
+Require runs code in the file specified
+
+The methods within the class can overwrite those in the module
+
+### about_scope
