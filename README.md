@@ -304,3 +304,7 @@ Roll 5 six-sided dice and return an array of the results
 5.times.map { 1 + rand(6) }
 => [2, 5, 1, 2, 4]
 ```
+
+### about_inheritance
+
+Subclasses can invoke parent behaviour via `super`
