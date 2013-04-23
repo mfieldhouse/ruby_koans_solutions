@@ -318,3 +318,5 @@ Require runs code in the file specified
 The methods within the class can overwrite those in the module
 
 ### about_scope
+
+Class names are just constants
