@@ -320,3 +320,44 @@ The methods within the class can overwrite those in the module
 ### about_scope
 
 Class names are just constants
+
+### about_class_methods
+
+Class statements return the value of their last expression
+
+Two ways to write class methods are  
+```ruby
+class Test
+  def self.some_method
+  end
+
+  class < self
+    def some_other_method
+    end
+  end
+end
+```
+
+A strange way that you can call class methods  
+```ruby
+fido = Dog.new
+fido.class.some_class_method
+```
+
+### about_message_passing   
+
+Pass a variable number of arguments to a method  
+```ruby
+def test(*args)
+  args
+end
+```
+
+If a method is passed to an object which doesn't exist, it raises a NoMethodError exception - unless you have provided the object with a method called method_missing.  
+```ruby
+class Dog
+  def method_missing(m, *args, &block)
+    "No method '#{m}' exists. You called it with these args: #{args}"
+  end
+end
+```
