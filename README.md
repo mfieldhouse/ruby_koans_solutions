@@ -361,3 +361,15 @@ class Dog
   end
 end
 ```
+
+### about_proxy_object_project
+
+In this Koan, there is a Television class which has a method to turn a TV on and off and set a channel number.  
+In this example, the Proxy class is being used to record which methods are sent to the TV and how many times they are used.
+
+### about_to_str
+
+**to_str vs to_s**
+
+to_str - the object is close to a string, treat it as one  
+to_s - give me the string representation of the object no matter what
